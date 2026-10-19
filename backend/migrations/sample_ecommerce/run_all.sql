@@ -1,0 +1,11 @@
+-- ============================================================================
+-- Convenience Script
+-- ============================================================================
+-- Supabase SQL Editor cannot import sibling files, so this file is a pointer.
+-- Run these files manually in order:
+--
+-- 1. backend/migrations/sample_ecommerce/001_schema.sql
+-- 2. backend/migrations/sample_ecommerce/002_seed.sql
+-- 3. backend/migrations/sample_ecommerce/003_readonly_role_template.sql
+--
+-- Keep 003 optional if you already created a read-only database role.

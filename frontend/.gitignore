@@ -1,0 +1,52 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# Google OAuth credentials
+client_secret*.json
+frontend/client_secret*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/.venv/
+
+# Node.js and Next.js
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Build and test artifacts
+dist/
+build/
+coverage/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Local databases and backups
+*.sqlite
+*.sqlite3
+*.db
+*.bak
+# LangGraph local runtime data
+backend/.langgraph_api/
+
+# TypeScript build information
+*.tsbuildinfo

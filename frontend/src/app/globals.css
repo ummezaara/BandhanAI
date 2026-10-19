@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0A0A0B;
+  --foreground: #e5e2e3;
+
+  /* Surface Depth */
+  --surface-base: #0A0A0B;
+  --surface-raised: #111113;
+  --surface-overlay: #1c1b1c;
+  --surface-elevated: #201f20;
+
+  /* Accents */
+  --accent-primary: #E8A020;
+  --accent-primary-hover: #ffb834;
+  --accent-primary-muted: rgba(232, 160, 32, 0.1);
+  --accent-agent: #3ac2ff;
+  --accent-agent-muted: rgba(58, 194, 255, 0.1);
+
+  /* Borders */
+  --border-default: #27272A;
+  --border-active: #3e3e42;
+
+  /* Semantics */
+  --text-primary: #e5e2e3;
+  --text-secondary: #d7c3ae;
+  --text-muted: rgba(215, 195, 174, 0.4);
+  --success: #6A9E6A;
+  --success-muted: rgba(106, 158, 106, 0.15);
+  --danger: #ffb4ab;
+  --danger-muted: rgba(255, 180, 171, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #3e3e42;
+}
+
+/* Font Utilities */
+.font-body-base {
+  font-family: var(--font-sans), sans-serif;
+}
+.font-data-mono {
+  font-family: var(--font-mono), monospace;
+}
+.font-display-lg {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 700;
+}
+.font-label-caps {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideInFromBottom 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #111113 25%, #1c1b1c 50%, #111113 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
